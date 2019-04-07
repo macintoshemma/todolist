@@ -1,5 +1,3 @@
-# &lt;todo app&gt;
-
 ## Todo app in vanilla Javascript
 
 First run `npm install` in the root folder to install the dependecies.
