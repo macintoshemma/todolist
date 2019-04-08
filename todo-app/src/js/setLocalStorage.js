@@ -8,7 +8,7 @@ const setLocalStorage = (e) => {
   const id = Date.now();
   const date = moment().format('MMMM Do YYYY, H:mm');
 
-  if (title.length > 1 || description.length > 1) {
+  if (title.length > 1 && description.length > 1) {
     const allTodos = JSON.parse(localStorage.getItem('todos'));
     allTodos.push({
       title, description, complete, id, date,

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { moveElement, removeElement } from './handleElement';
+import { moveComplete, moveIncomplete } from './moveElement';
+import removeElement from './removeElement';
 
 const displayFromLocalStorage = () => {
   const todoStore = JSON.parse(localStorage.getItem('todos'));
@@ -10,37 +11,47 @@ const displayFromLocalStorage = () => {
     const newTodo = document.createElement('div');
     const title = document.createElement('div');
     const description = document.createElement('div');
+    const date = document.createElement('div');
     const removeBtn = document.createElement('button');
     const completeBtn = document.createElement('button');
+    const undoBtn = document.createElement('button')
 
-    newTodo.className = 'todo-list';
     newTodo.id = todo.id;
+    newTodo.className = 'todo-list';
     title.className = 'title';
     description.className = 'description';
+    date.className = 'date'
     removeBtn.className = 'remove__btn';
     completeBtn.className = 'complete__btn';
+    undoBtn.className = 'undo__btn';
 
     removeBtn.textContent = 'Remove';
+    completeBtn.textContent = 'Complete';
+    undoBtn.textContent = 'Undo';
 
     removeBtn.onclick = removeElement;
-    completeBtn.onclick = moveElement;
+    completeBtn.onclick = moveComplete;
+    undoBtn.onclick = moveIncomplete; 
 
     title.textContent = todo.title;
     description.textContent = todo.description;
+    date.textContent = todo.date;
 
     newTodo.appendChild(title);
     newTodo.appendChild(description);
+    newTodo.appendChild(date);
     newTodo.appendChild(removeBtn);
-    newTodo.appendChild(completeBtn);
+    
 
     if (todo.complete === false) {
       todoMain.appendChild(newTodo);
-      completeBtn.textContent = 'Complete';
+      newTodo.appendChild(completeBtn);
+      
     }
 
     if (todo.complete === true) {
       completeMain.appendChild(newTodo);
-      completeBtn.textContent = 'Undo';
+      newTodo.appendChild(undoBtn);
     }
   });
 };

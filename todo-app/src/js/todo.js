@@ -1,6 +1,6 @@
 import moment from 'moment';
 import setLocalStorage from './setLocalStorage';
-import displayFromLocalStorage from './displayElement';
+import displayFromLocalStorage from './createElement';
 import '../style/todo.css';
 
 window.onload = () => {
