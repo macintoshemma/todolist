@@ -3,7 +3,7 @@ const moveElement = (e) => {
   const complete = document.getElementsByClassName('complete')[0];
   const currentTodo = e.target.parentNode;
   const { id } = currentTodo;
-  const completeBtn = document.getElementsByClassName('complete__btn')
+  const completeBtn = e.target;
 
   todos.forEach((todo) => {
     if (todo.id == id) {
@@ -13,7 +13,7 @@ const moveElement = (e) => {
     if (todo.complete == true) {
       currentTodo.parentNode.removeChild(currentTodo);
       complete.appendChild(currentTodo);
-      completeBtn.textContent = 'Undo';
+      currentTodo.removeChild(completeBtn);
     }
   });
 };

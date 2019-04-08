@@ -21,7 +21,6 @@ const displayFromLocalStorage = () => {
     completeBtn.className = 'complete__btn';
 
     removeBtn.textContent = 'Remove';
-    completeBtn.textContent = 'Complete';
 
     removeBtn.onclick = removeElement;
     completeBtn.onclick = moveElement;
@@ -36,10 +35,12 @@ const displayFromLocalStorage = () => {
 
     if (todo.complete === false) {
       todoMain.appendChild(newTodo);
+      completeBtn.textContent = 'Complete';
     }
 
     if (todo.complete === true) {
       completeMain.appendChild(newTodo);
+      completeBtn.textContent = 'Undo';
     }
   });
 };
