@@ -25,10 +25,16 @@ const moveElement = (e) => {
 };
 
 const removeElement = (event) => {
-  const listContainer = event.target.parentNode;
-  const listId = listContainer.id;
-  listContainer.remove();
-
+  const todos = JSON.parse(localStorage.getItem('todos'));
+  const currentTodo = e.target.parentNode;
+  const { id } = currentTodo;
+  currentTodo.remove();
+  
+  todos.forEach((todo) => {
+    if(todo.id == id){
+      
+    }
+  })
   localStorage.removeItem(`title${listId}`);
   localStorage.removeItem(`description${listId}`);
 };
