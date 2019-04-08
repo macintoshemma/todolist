@@ -127,7 +127,6 @@ input[type="submit"] {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 2px;
   margin: 5px 5px 5px 5px;
-  
 }
 
 .todo p {
@@ -160,6 +159,6 @@ input[type="submit"] {
   }
 
   .grid-container {
-    width: 50px;
+    width: 100px;
   }
 }
