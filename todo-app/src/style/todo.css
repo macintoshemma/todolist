@@ -89,6 +89,7 @@ input[type="submit"] {
 .remove__btn {
   border: none;
   background-color: #fbfbfb;
+  margin: 0 0 10px 5px;
 }
 
 .remove__btn:hover {
@@ -101,6 +102,7 @@ input[type="submit"] {
 .complete__btn {
   border: none;
   background-color: #fbfbfb;
+  margin: 0 0 10px 5px;
 }
 
 .complete__btn:hover {
@@ -122,7 +124,7 @@ input[type="submit"] {
   transition-duration: 0.5s;
 }
 
-.todo-list {
+.todoItem {
   background-color: #fbfbfb;
   border: 1px solid rgb(211, 211, 211);
   border-radius: 2px;
@@ -139,12 +141,12 @@ input[type="submit"] {
   font-weight: 900;
 }
 
-.complete .todo-list{
+.complete .todoItem{
   opacity: 0.5;
   transition-duration: 2s;
 }
 
-.complete .todo-list:hover{
+.complete .todoItem:hover{
   opacity: 1;
   transition-duration: 0.3s;
 }
@@ -159,6 +161,6 @@ input[type="submit"] {
   }
 
   .grid-container {
-    width: 100px;
+    width: 200px;
   }
 }

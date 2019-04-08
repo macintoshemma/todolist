@@ -1,10 +1,10 @@
 import moment from 'moment';
 import setLocalStorage from './setLocalStorage';
-import displayFromLocalStorage from './createElement';
+import displayFromLocalStorage from './displayFromLocalStorage';
 import '../style/todo.css';
 
 window.onload = () => {
-  const todoForm = document.querySelector('#new-todo');
+  const todoForm = document.querySelector('#todoForm');
   const currentDate = document.querySelector('#currentDate');
   currentDate.innerHTML = moment().format('MMM Do YYYY');
   const { todos } = localStorage;
@@ -14,6 +14,7 @@ window.onload = () => {
   if (todos) displayFromLocalStorage();
 
   todoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
     setLocalStorage(e);
   });
 };

@@ -8,8 +8,9 @@ const moveComplete = (e) => {
   const updatedTodos = [];
 
   undoBtn.textContent = 'Undo';
-  undoBtn.onclick = moveIncomplete; 
   undoBtn.className = 'undo__btn';
+  undoBtn.onclick = moveIncomplete; 
+  
 
   todoStore.forEach((todo) => {
     if (todo.id == id && todo.complete == false) {
@@ -35,8 +36,9 @@ const moveIncomplete = (e) => {
   const updatedTodos = [];
 
   completeBtn.textContent = 'Complete';
-  completeBtn.onclick = moveComplete; 
   completeBtn.className = 'complete__btn';
+  completeBtn.onclick = moveComplete; 
+ 
 
   todoStore.forEach((todo) => {
     if(todo.id == id && todo.complete == true) {
