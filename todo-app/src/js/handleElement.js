@@ -1,9 +1,12 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable eqeqeq */
 const moveElement = (e) => {
   const todos = JSON.parse(localStorage.getItem('todos'));
   const complete = document.getElementsByClassName('complete')[0];
   const currentTodo = e.target.parentNode;
   const { id } = currentTodo;
   const completeBtn = e.target;
+  const updatedTodos = [];
 
   todos.forEach((todo) => {
     if (todo.id == id) {
@@ -15,7 +18,10 @@ const moveElement = (e) => {
       complete.appendChild(currentTodo);
       currentTodo.removeChild(completeBtn);
     }
+    updatedTodos.push(todo);
   });
+
+  localStorage.setItem('todos', JSON.stringify(updatedTodos));
 };
 
 const removeElement = (event) => {
